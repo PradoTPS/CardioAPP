@@ -235,9 +235,11 @@
     </ion-card-content>
 
     <ion-card-content text-wrap *ngIf="step == 13">
-        <p>Sua paciente possui todos os sintomas de Miocardiopatia Periparto. Solicite imediatamente o ECG ou avalie os exames já realizados.</p>
-        <button ion-button block class="button-next" (click)="callAgain('No laudo do ECG a paciente apresentou algum dos sintomas abaixo?', 5)">Avaliar</button>
-      </ion-card-content>
+      <p>Sua paciente possui todos os sintomas de Miocardiopatia Periparto. Solicite imediatamente o ECG ou avalie os exames já realizados.</p>
+      <button ion-button block class="button-next" (click)="callAgain('No laudo do ECG a paciente apresentou algum dos sintomas abaixo?', 5)">Avaliar</button>
+    </ion-card-content>
 
   </ion-card>
+
+  <button ion-button block class="button-next" (click)="logout()">Sair</button>
 </ion-content>

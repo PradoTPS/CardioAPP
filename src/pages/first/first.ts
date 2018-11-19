@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -13,14 +14,26 @@ export class FirstPage {
   step: number;
   block: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.cardHeader = "Paciente gestante ou em pós-parto?"
-    this.step = 1;
+  constructor(private afAuth: AngularFireAuth, private toast: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+    this.goHome();
   }
 
   ionViewDidLoad(){
-    this.cardHeader = "Paciente gestante ou em pós-parto?"
-    this.step = 1;
+    this.afAuth.authState.subscribe(data => {
+      if (data && data.email && data.uid) {
+        this.toast.create({
+          message: `Boas vindas!`,
+          duration: 3000
+        }).present();
+      } else {
+        this.toast.create({
+          message: 'Não foi possível autenticar.',
+          duration: 3000
+        }).present();
+      }
+    });
+
+    this.goHome();
   }
 
   private callAgain(header, step){
@@ -50,6 +63,13 @@ export class FirstPage {
   }
 
   private goHome(){
-    this.navCtrl.setRoot(HomePage);
+    this.cardHeader = "Paciente gestante ou em pós-parto?"
+    this.step = 1;
+  }
+
+  private logout(){
+    this.afAuth.auth.signOut().then(() => {
+      this.navCtrl.setRoot(HomePage);
+   });
   }
 }
