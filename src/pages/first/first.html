@@ -15,12 +15,12 @@
         <ion-list radio-group>
             <ion-item>
               <ion-label>Sim</ion-label>
-              <ion-radio></ion-radio>
+              <ion-radio (click)="setBlock(0)"></ion-radio>
             </ion-item>
   
             <ion-item>
                 <ion-label>Não</ion-label>
-                <ion-radio></ion-radio>
+                <ion-radio (click)="setBlock(1)"></ion-radio>
             </ion-item>
         </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('A Paciente apresenta alguns dos fatores de risco citados abaixo?', 2)">Avançar</button>
@@ -30,19 +30,19 @@
       <ion-list radio-group>
         <ion-item>
           <ion-label>HAS prévia</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Histórico de pré-eclâmpsia</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Eclâmpsia</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Nenhum</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(2)"></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('Apresenta algum dos sintomas abaixo?', 3)">Avançar</button>
@@ -52,19 +52,63 @@
       <ion-list radio-group>
         <ion-item>
           <ion-label>Dispneia</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Edema</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Fadiga</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Astenia</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Taquicardia</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>B3</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ascite</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tosse Noturna</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dor precordial</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Palpitações</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>PA elevada</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Turgência jugular</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hiperfonese de P2</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hepatomegalia</ion-label>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Nenhum</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(2)"></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('Exames já realizados pela paciente:', 4)">Avançar</button>
@@ -74,19 +118,19 @@
       <ion-list radio-group>
         <ion-item>
           <ion-label>ECG</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Hemograma</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Bioquímica</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Nenhum</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(3)"></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('No laudo do ECG a paciente apresentou algum dos sintomas abaixo?', 5)">Avançar</button>
@@ -96,19 +140,19 @@
       <ion-list radio-group>
         <ion-item>
           <ion-label>Taquicardia sinusal</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>HVE</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Onda T invertida</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Nenhum</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(2)"></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('No laudo dos exames laboratoriais a paciente apresentou algum dos sintomas abaixo?', 6)">Avançar</button>
@@ -118,15 +162,15 @@
       <ion-list radio-group>
         <ion-item>
           <ion-label>Elevação de troponia</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>BNP/NT-pró-BNP</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Nenhum</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(2)"></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('Solicitar Ecocardiograma Transtorácico (ECOTT)', 7)">Avançar</button>
@@ -142,12 +186,12 @@
         <ion-list radio-group>
             <ion-item>
               <ion-label>Sim</ion-label>
-              <ion-radio></ion-radio>
+              <ion-radio (click)="setBlock(0)"></ion-radio>
             </ion-item>
   
             <ion-item>
                 <ion-label>Não</ion-label>
-                <ion-radio></ion-radio>
+                <ion-radio disabled></ion-radio>
             </ion-item>
         </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('No laudo do Ecocardiograma Transtorácico (ECOTT) a paciente apresentou algum dos sintomas abaixo?', 9)">Avançar</button>
@@ -157,19 +201,19 @@
       <ion-list radio-group>
         <ion-item>
           <ion-label>FEVE reduzida</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Disfunção sistólica</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Disfunção diastólica</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(0)"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label>Nenhum</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox (click)="setBlock(2)"></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button block class="button-next" (click)="callAgain('Encaminhamento URGENTE ao cardiologista!', 10)">Avançar</button>
@@ -179,6 +223,21 @@
       <p>Iniciar tratamento empírico o mais rápido possível e encaminhar para o Cardiologista para acompanhamento mais profundo.</p>
       <button ion-button block class="button-next" (click)="goHome()">Ok</button>
     </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 11">
+      <p>Como sua paciente não é gestante e também não está em período pós parto, não há possibilidade de apresentar-se Miocardiopatia Periparto.</p>
+      <button ion-button block class="button-next" (click)="goHome()">Ok</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 12">
+      <p>Sua paciente está fora de risco! Siga com o pré-natal regular e observe aparecimento de possíveis sintomas da Miocardiopatia Periparto.</p>
+      <button ion-button block class="button-next" (click)="goHome()">Ok</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 13">
+        <p>Sua paciente possui todos os sintomas de Miocardiopatia Periparto. Solicite imediatamente o ECG ou avalie os exames já realizados.</p>
+        <button ion-button block class="button-next" (click)="callAgain('No laudo do ECG a paciente apresentou algum dos sintomas abaixo?', 5)">Avaliar</button>
+      </ion-card-content>
 
   </ion-card>
 </ion-content>
