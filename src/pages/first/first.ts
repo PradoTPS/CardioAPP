@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FirstPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FirstPage {
 
+  cardHeader: any;
+  step: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.cardHeader = "Paciente gestante ou em pós-parto?"
+    this.step = 1;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FirstPage');
+  ionViewDidLoad(){
+    this.cardHeader = "Paciente gestante ou em pós-parto?"
+    this.step = 1;
   }
 
+  private callAgain(header, step){
+    this.cardHeader = header;
+    this.step = step;
+  }
+
+  private goHome(){
+    this.navCtrl.setRoot(HomePage);
+  }
 }

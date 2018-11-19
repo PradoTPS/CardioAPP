@@ -5,5 +5,180 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
 
+    <ion-card-header text-wrap>
+      {{cardHeader}}
+    </ion-card-header>
+  
+    <ion-card-content text-wrap *ngIf="step == 1">
+        <ion-list radio-group>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio></ion-radio>
+            </ion-item>
+        </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('A Paciente apresenta alguns dos fatores de risco citados abaixo?', 2)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 2">
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label>HAS prévia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Histórico de pré-eclâmpsia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Eclâmpsia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nenhum</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('Apresenta algum dos sintomas abaixo?', 3)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 3">
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label>Dispneia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Edema</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fadiga</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nenhum</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('Exames já realizados pela paciente:', 4)">Avançar</button>
+    </ion-card-content>
+  
+    <ion-card-content text-wrap *ngIf="step == 4">
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label>ECG</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hemograma</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Bioquímica</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nenhum</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('No laudo do ECG a paciente apresentou algum dos sintomas abaixo?', 5)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 5">
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label>Taquicardia sinusal</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>HVE</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Onda T invertida</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nenhum</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('No laudo dos exames laboratoriais a paciente apresentou algum dos sintomas abaixo?', 6)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 6">
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label>Elevação de troponia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>BNP/NT-pró-BNP</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nenhum</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('Solicitar Ecocardiograma Transtorácico (ECOTT)', 7)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 7">
+      <p>Sua paciente possui todos os sintomas de Miocardiopatia Periparto. Solicite imediatamente o ECOTT.</p>
+      <button ion-button block class="button-next" (click)="callAgain('A paciente já realizou o ECOTT?', 8)">Avaliar</button>
+      <button ion-button block (click)="callAgain('A paciente já realizou o ECOTT?', 8)">Solicitar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 8">
+        <ion-list radio-group>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio></ion-radio>
+            </ion-item>
+        </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('No laudo do Ecocardiograma Transtorácico (ECOTT) a paciente apresentou algum dos sintomas abaixo?', 9)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 9">
+      <ion-list radio-group>
+        <ion-item>
+          <ion-label>FEVE reduzida</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Disfunção sistólica</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Disfunção diastólica</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nenhum</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <button ion-button block class="button-next" (click)="callAgain('Encaminhamento URGENTE ao cardiologista!', 10)">Avançar</button>
+    </ion-card-content>
+
+    <ion-card-content text-wrap *ngIf="step == 10">
+      <p>Iniciar tratamento empírico o mais rápido possível e encaminhar para o Cardiologista para acompanhamento mais profundo.</p>
+      <button ion-button block class="button-next" (click)="goHome()">Ok</button>
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>
